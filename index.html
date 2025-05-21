@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kartick Samanta | About Me</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background-color: #f2f2f2;
+    }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    .about-section {
+      padding: 50px;
+      text-align: center;
+      background-color: #474e5d;
+      color: white;
+    }
+
+    .card-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 700px;
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 8px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .profile-pic-wrapper {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      border: 4px solid #ddd;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .title {
+      color: grey;
+      font-size: 1.1em;
+    }
+
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 10px 16px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1em;
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+
+    .button:hover {
+      background-color: #555;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      padding-top: 80px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      animation: zoom 0.3s ease-in-out;
+    }
+
+    @keyframes zoom {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      color: white;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 700px) {
+      .card {
+        width: 100%;
+      }
+
+      .modal-content {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="about-section">
+  <h1>About Me</h1>
+</div>
+
+<div class="card-wrapper">
+  <div class="card">
+    <div class="profile-pic-wrapper">
+      <img src="myPhoto.jpg" alt="Kartick Samanta" class="profile-pic" id="profilePic">
+    </div>
+    <div class="container">
+      <h2>Kartick Samanta</h2>
+      <p class="title">Research Scholar at TIFR-CAM</p>
+
+      <p>Hi, I’m <strong>Kartick Samanta</strong> — a research scholar at the <strong>TIFR Centre for Applicable Mathematics</strong>.</p>
+
+      <p>I have a deep passion for <strong>technology</strong>, <strong>computational mathematics</strong>, and <strong>simulation</strong>. My academic journey began with a <strong>B.Sc. in Mathematics</strong>, which laid the foundation for my growing interest in applying mathematics to real-world problems through computation and modeling.</p>
+
+      <p>At TIFR-CAM, my research focuses on leveraging mathematical theory and computational techniques to explore complex systems, simulate dynamic behavior, and push the boundaries of what applied mathematics can achieve.</p>
+
+      <p>When I’m not immersed in code or equations, I enjoy staying updated with the latest in tech and exploring new tools that bridge theory with practical applications.</p>
+
+      <p>This space is where I share insights from my work, projects I’m passionate about, and ideas at the intersection of math and technology. Thanks for visiting — and feel free to connect!</p>
+
+      <p style="font-style: italic; color: #555;">— Kartick</p>
+      <p><button class="button" onclick="window.location.href='mailto:kartick24@tifrbng.res.in'">Contact</button></p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for full image -->
+<div id="imgModal" class="modal">
+  <span class="close" id="modalClose">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+
+<script>
+  // Image modal script
+  const profilePic = document.getElementById("profilePic");
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = document.getElementById("modalClose");
+
+  profilePic.onclick = function () {
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  }
+
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+</body>
+</html>
